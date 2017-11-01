@@ -1,22 +1,92 @@
-# Compiled class file
-*.class
+import java.io.*;
 
-# Log file
-*.log
 
-# BlueJ files
-*.ctxt
+public class cuatro {
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+         static BufferedReader br = new BufferedReader ( new InputStreamReader (System.in));
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
+         static BufferedWriter bw = new BufferedWriter ( new OutputStreamWriter (System.out));
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+            
+
+ public static void main(String[] args) throws IOException {
+
+           
+
+         int [] dias = new int [7];
+
+         bw.write (" ingrese los precios por día");
+
+         bw.flush();
+
+         int i;
+
+         for (i = 0; i < dias.length; i++) {
+
+                 
+
+                 int valor = Integer.parseInt(br.readLine() );
+
+                 dias[i] = valor;
+         }
+
+                 int Menor = dias[0];
+
+         int Mayor = dias[0];
+
+         int diferencia=0;
+
+         
+
+         for (int j = 0; j < dias.length; j++) {
+                       
+
+                         if(dias[j] < Menor){
+
+                                 
+
+                                 Menor = dias[j];
+
+                         }
+
+                 
+
+         }
+
+         
+
+         System.out.println(Menor);
+
+         
+
+         for (int x = 0; x < dias.length; x++) {
+
+                         
+
+                         
+
+                         if(dias[x] > Mayor){
+         
+
+                                 Mayor = dias[x];
+
+                         }                
+
+      }
+
+         System.out.println(Mayor);
+
+         
+
+         diferencia = Mayor - Menor;
+
+         
+
+         System.out.println("La ganancia es de " + diferencia);
+
+         
+
+   }
+
+}
+
